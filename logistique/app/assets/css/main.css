@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================================
+   DÉCLARATION DE LA POLICE CHILLAX
+   On déclare chaque graisse séparément avec @font-face
+   ~ = racine du projet (alias Nuxt)
+   ================================================ */
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('~/assets/fonts/Chillax-Regular.woff2') format('woff2');
+  font-weight: 400;   /* normal */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('~/assets/fonts/Chillax-Medium.woff2') format('woff2');
+  font-weight: 500;   /* medium */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('~/assets/fonts/Chillax-Semibold.woff2') format('woff2');
+  font-weight: 600;   /* semi-gras */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('~/assets/fonts/Chillax-Bold.woff2') format('woff2');
+  font-weight: 700;   /* gras */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('~/assets/fonts/Chillax-Light.woff2') format('woff2');
+  font-weight: 300;   /* léger */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Chillax';
+  src: url('~/assets/fonts/Chillax-Extralight.woff2') format('woff2');
+  font-weight: 200;   /* très léger */
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ================================================
+   STYLES DE BASE
+   ================================================ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    /* Chillax sur tout le site — titres ET texte */
+    font-family: 'Chillax', sans-serif;
+    background-color: #F8FAFC;
+    color: #1E293B;
+  }
+
+  .dark body {
+    background-color: #0F172A;
+    color: #E2E8F0;
+  }
+}
+
+/* ================================================
+   CLASSES RÉUTILISABLES
+   ================================================ */
+@layer components {
+  .btn-primary {
+    @apply bg-orange-500 text-white font-semibold
+           px-6 py-3 rounded-lg
+           hover:bg-orange-600
+           transition-colors duration-200
+           inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-slate-800 text-slate-800
+           px-6 py-3 rounded-lg font-semibold
+           hover:bg-slate-800 hover:text-white
+           dark:border-white dark:text-white
+           dark:hover:bg-white dark:hover:text-slate-900
+           transition-all duration-200
+           inline-flex items-center gap-2;
+  }
+
+  .section-tag {
+    @apply text-orange-500 font-semibold
+           text-sm tracking-widest uppercase;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold
+           text-tl-navy dark:text-white;
+  }
+}
